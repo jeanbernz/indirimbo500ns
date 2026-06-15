@@ -1,0 +1,55 @@
+
+apply plugin: 'com.android.application'
+
+android {
+    namespace "com.indirimbo500.app"
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.indirimbo500.app"
+        minSdkVersion 22
+        targetSdkVersion 35
+        versionCode 6
+        versionName "1.4.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            storeFile file("indirimbo500-new.jks")
+            storePassword "indirimbo500"
+            keyAlias "indirimbo500"
+            keyPassword "indirimbo500"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
+    implementation "androidx.core:core-splashscreen:1.0.1"
+    implementation project(':capacitor-android')
+}

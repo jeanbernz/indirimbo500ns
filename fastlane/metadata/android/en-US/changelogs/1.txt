@@ -1,0 +1,7 @@
+Verisiyo ya mbere (1.0.0):
+- Indirimbo zose 500 ziboneka ari offline
+- Shakiro ryoroshye rya nimero na magambo
+- Pad ya nimero mwihuse
+- Fonti ikuza no guca bugufi
+- Moderi ya nijoro
+- Sangiza inshuti
